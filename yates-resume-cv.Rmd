@@ -1,0 +1,69 @@
+---
+name: Heath 
+surname: Yates
+position: "Machine Learning Engineer"
+address: "Kansas City"
+profilepic: "./images/profile.jpg"
+www: "www.heathyates.com"
+email: "hlyates@ksu.edu"
+github: heathyates
+linkedin: heathyates
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor:  512888
+aboutme: "I am a machine learning engineer at Centene. I am also an adjunct professor at Kansas State University. I like to innovate, solve problems, and write code. I have 7 years of combined experience in data analytics, software engineering, and research."
+docname: CV
+output: vitae::awesomecv
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+require(xfun)
+packages <- c('vitae'     # The CV's LaTeX Template
+             ,'tibble'    # Data structure for tribbles
+             ,'magrittr'  # The Pipe %>%
+             ,'here'      # Relative File Paths
+             ,'readr'     # Data Loading
+             ,'glue'      # String Manipulation
+            )
+xfun::pkg_attach2(packages, message = FALSE)
+source(file = here("data","data.r"))
+```
+
+
+# Skills
+
+```{r skills}
+skills %>%
+  detailed_entries(
+    with = area,
+    what = skills
+  )
+```
+
+
+# Employment
+
+```{r employment}
+work %>%
+  detailed_entries(
+    with = title,
+    what = unit,
+    why = detail,
+    when = glue::glue("{startMonth} {startYear} --> {endMonth} {endYear}",.na = ""),
+    where = where
+  )
+```
+
+
+# Education
+
+```{r education}
+edu %>%
+  detailed_entries(
+    with = degree,
+    what = inst,
+    where = subject
+  )
+```
