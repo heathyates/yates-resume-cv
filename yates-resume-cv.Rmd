@@ -1,7 +1,7 @@
 ---
 name: Heath 
 surname: Yates
-position: "Machine Learning Engineer"
+position: "Senior Machine Learning Research Engineer"
 address: "Kansas City"
 profilepic: "./images/profile.jpg"
 www: "www.heathyates.com"
@@ -10,7 +10,7 @@ github: heathyates
 linkedin: heathyates
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor:  512888
-aboutme: "I am a machine learning engineer at Centene. I am also an adjunct professor at Kansas State University. I like to innovate, solve problems, and write code. I have 7 years of combined experience in data analytics, software engineering, and research."
+aboutme: "I am a machine learning engineer at Artisight. I am also an adjunct professor at Kansas State University. I like to innovate, solve problems, and write code. I have 7 years of combined experience in data analytics, software engineering, and research."
 docname: CV
 output: vitae::awesomecv
 ---
